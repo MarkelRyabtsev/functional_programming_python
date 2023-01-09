@@ -36,7 +36,7 @@ print("Выберите функцию fi(x):")
 print("1) fi(x) = 2x")
 print("2) fi(x) = x^2")
 print("3) fi(x) = x/3")
-function_number = set_natural_number("Введите номер функции", range(1, 3))
+function_number = set_natural_number("Введите номер функции", range(1, 4))
 
 selected_function = None
 selected_function_string = ""

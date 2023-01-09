@@ -1,4 +1,5 @@
 import math
+from decimal import Decimal
 import sys
 from tabulate import tabulate
 
@@ -18,10 +19,6 @@ def set_real_number(description: str, only_positive: bool = False, not_equal: fl
         except:
             print('Введенное значение не является вещественным числом, повторите!')
             continue
-
-
-def func(x):
-    return math.log(1 - x, math.e)
 
 
 def sequence_element(x: float, n: int) -> float:
@@ -47,13 +44,13 @@ eps = set_real_number("Введите точность ε", only_positive=True)
 print("--------------------------------------------------------")
 print("Значения функции ln(1-x) = -(x + x^2/2 + x^3/3 + ...)")
 table = []
-header = ["Аргумент (х)", "Приблеженное значение", "Точное значение", "Количество суммирований"]
+header = ["Аргумент (х)", "Значение функции", "Количество суммирований"]
 x_start = -1 + step
 x_end = 1
 sys.setrecursionlimit(50000)
 while x_start <= x_end:
     root = find_root(round(x_start, 1), eps)
-    table.append([round(x_start, 1), root[0], func(x_start), root[1]])
+    table.append([round(x_start, 1), root[0], root[1]])
     x_start += step
 print(tabulate(table, header))
 
