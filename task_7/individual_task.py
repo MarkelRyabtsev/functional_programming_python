@@ -1,4 +1,4 @@
-import random
+import inspect
 
 
 # ------------------------- Utility methods -------------------------
@@ -7,7 +7,7 @@ def print_divider(): print("----------------------------------------------------
 
 # ------------------------- Task methods -------------------------
 def define_type(value: object):
-    print(f'{value} - {type(value)}')
+    print(f'{value} - {type(value)}, `Is ABC: {inspect.isabstract(value)}')
 
 
 def add_to_string(string: str, value: object) -> str:
